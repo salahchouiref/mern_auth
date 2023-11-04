@@ -81,12 +81,12 @@ export default function Profile() {
         });
         const data = await res.json();
         if(data.success === false){
-          updateUserFailure(data);
+          deleteUserFailure(data);
           return ;
         }
         dispatch(deleteUserSuccess());
       }catch(err){
-        updateUserFailure(err);
+        deleteUserFailure(err);
       }
     }
   }
