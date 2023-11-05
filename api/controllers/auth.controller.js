@@ -50,4 +50,8 @@ export const google = async (req,res,next) =>{
     }catch(err){
         next(err);
     }
-}
+};
+
+export const signout = (req,res) => {
+    res.clearCookie("accesToken").status(200).json({message : "Signout success"});
+};
